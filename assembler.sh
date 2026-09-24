@@ -34,7 +34,7 @@ fi
 
 output="${input_file%.vsc}.bin"
 
-first_line=$(head -n 1 "$input_file")
+first_line=$(head -n 1 "$input_file" | tr -d '\r')
 
 if [[ "$first_line" != "0" && "$first_line" != "2" ]]; then
     echo "Error: first line must be 0 or 2"
@@ -58,12 +58,13 @@ while IFS= read line || [ -n "$line" ]; do
         continue
     fi
 
+    # Line 1 only tells us the program type,
+    # so don't process it again
+    if [ "$line_number" -eq 1 ]; then
+        continue
+    fi
+    
     if [ "$first_line" -eq 2 ] && [ "$line_number" -le 3 ]; then
-
-        if [ "$line" -lt 0 ] || [ "$line" -gt 255 ]; then
-            echo "Error: data value on line $line_number must be between 0 and 255"
-            exit 1
-        fi
 
         data_hex=$(printf '%02x' "$line")
 
