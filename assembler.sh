@@ -50,7 +50,7 @@ fi
 all_bytes=""
 line_number=0
 
-while IFS= read -r line || [ -n "$line" ]; do
+while IFS= read line || [ -n "$line" ]; do
 
     line_number=$((line_number + 1))
 
