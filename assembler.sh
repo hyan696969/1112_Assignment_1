@@ -58,12 +58,10 @@ while IFS= read line || [ -n "$line" ]; do
         continue
     fi
 
-    # Line 1 only tells us the program type,
-    # so don't process it again
     if [ "$line_number" -eq 1 ]; then
         continue
     fi
-    
+
     if [ "$first_line" -eq 2 ] && [ "$line_number" -le 3 ]; then
 
         data_hex=$(printf '%02x' "$line")
