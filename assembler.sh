@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [ $# -ne 1 ]; then
-    echo "Error: expected one .vsc file as argument" 
+    echo "usage: no argument is provided" 
     exit 1
 fi
 
