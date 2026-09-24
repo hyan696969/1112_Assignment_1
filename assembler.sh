@@ -25,7 +25,7 @@ fi
 output="${input_file%.vsc}.bin"
 
 if [ ! -s "$input_file" ]; then
-    echo "usage: the file is empty – no .bin file is produced"
+    echo "usage: the file is empty - no .bin file is produced"
     exit 1
 fi
 
