@@ -12,13 +12,13 @@ fi
 
 input_file="$1"
 
-if [ ! -f "$input_file" ]; then
-    echo "usage: input is not a file or it does not exist"
+if [ "$input_file" != *.vsc ]; then
+    echo "usage: input does not have the extension .vsc"
     exit 1
 fi
 
-if [ "$input_file" != *.vsc ]; then
-    echo "usage: input does not have the extension .vsc"
+if [ ! -f "$input_file" ]; then
+    echo "usage: input is not a file or it does not exist"
     exit 1
 fi
 
