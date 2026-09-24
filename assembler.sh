@@ -54,7 +54,7 @@ while IFS= read line || [ -n "$line" ]; do
 
     line_number=$((line_number + 1))
 
-    if [ "$line_number" -eq 1 ]; then
+    if [ -z "$line" ]; then
         continue
     fi
 
