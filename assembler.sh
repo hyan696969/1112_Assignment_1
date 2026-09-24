@@ -26,7 +26,7 @@ fi
 
 first_line=$(head -n 1 "$input_file")
 
-if [ "$first_line" != "0" && "$first_line" != "2" ]; then
+if [[ "$first_line" != "0" && "$first_line" != "2" ]]; then
     echo "Error: first line must be 0 or 2"
     exit 1
 fi
