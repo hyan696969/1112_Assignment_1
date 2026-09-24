@@ -17,7 +17,7 @@ if [ ! -f "$input_file" ]; then
     exit 1
 fi
 
-if ["$input_file" != *.vsc]; then
+if [ "$input_file" != *.vsc ]; then
     echo "usage: input does not have the extension .vsc"
     exit 1
 fi
